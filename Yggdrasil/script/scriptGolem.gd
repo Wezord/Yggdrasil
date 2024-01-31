@@ -3,13 +3,24 @@ extends KinematicBody2D
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
+var body_in_area : Array = []
+
+
 
 export (int) var stones = 0
 export (int) var logs = 0
 export (int) var waters = 0
 
+export (int) var health = 50
+export (int) var attack_cooldown = 3
+
+var ind : int = 0 
+var can_attack : bool = true
+var timer : Timer
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	timer = $Timer
 	pass
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -26,3 +37,40 @@ func _process(delta):
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * 300
 		velocity = move_and_slide(velocity)
+		
+	if Input.is_action_pressed("ui_select") and can_attack:
+		print("Attack")
+		can_attack = false
+		timer.wait_time = 1
+		timer.start()
+		$AnimatedSprite.animation ="Slash"
+		for i in body_in_area:
+			print(i)
+			i.attack()
+			
+func _on_KinematicBody2D_mouse_entered():
+	print("Mouse entered")
+
+func _on_StoneAttack_input_event(viewport, event, shape_idx):
+	if event.is_action_pressed("ui_select") :
+		print("Select")
+		
+
+
+func _on_StoneAttack_body_entered(body):
+	if body.is_in_group("Enemy"):
+		if not body_in_area.has(body):
+			body_in_area.append(body)
+		
+		print("Enemy")
+
+
+func _on_StoneAttack_body_exited(body):
+	if body.is_in_group("Enemy"):
+		if body_in_area.has(body):
+			body_in_area.remove(body_in_area.find(body))
+
+func _on_Timer_timeout():
+	print("time_out")
+	can_attack = true
+	$AnimatedSprite.animation = "Mine"
