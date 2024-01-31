@@ -102,11 +102,11 @@ func _process(delta):
 		elif(velocity.length()==0):
 			if(!wait && ($AnimatedSprite.animation=="walk" || $AnimatedSprite.animation=="wakeup")):
 				$AnimatedSprite.animation="wait"
-				timer_start(1)
+				timer_start(10)
 			elif(!wait):
 				$AnimatedSprite.animation="idle"
 		
-		if(!wait || ($AnimatedSprite.animation=="wait" || $AnimatedSprite.animation=="walk")):
+		if(!wait || $AnimatedSprite.animation=="wait" || $AnimatedSprite.animation=="walk"):
 			position+=velocity*200*delta
 	
 	
