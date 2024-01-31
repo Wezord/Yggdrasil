@@ -15,9 +15,13 @@ func _ready():
 
 
 func timer_start(time):
-		my_timer.wait_time=time
-		my_timer.start()
-		wait=true
+	my_timer.wait_time=time
+	my_timer.start()
+	wait=true
+
+func timer_stop():
+	my_timer.stop()
+	wait=false
 
 func _on_Timer_timeout():
 	wait=false
@@ -39,8 +43,7 @@ func _process(delta):
 	
 	if(Input.is_action_just_pressed("ui_page_down")):
 		carry_item=!carry_item
-		my_timer.stop()
-		wait=false
+		timer_stop()
 	
 	
 	
@@ -51,7 +54,7 @@ func _process(delta):
 			$AnimatedSprite.frame=20
 		if($AnimatedSprite.animation=="wait"):
 			$AnimatedSprite.animation="wait_item"
-			$AnimatedSprite.frame=23
+			timer_start(10)
 		if($AnimatedSprite.animation=="walk"):
 			$AnimatedSprite.animation="carry"
 			$AnimatedSprite.frame=3
@@ -66,6 +69,7 @@ func _process(delta):
 				timer_start(1.4)
 			elif($AnimatedSprite.animation=="wait_item"):
 				$AnimatedSprite.animation="carry"
+				timer_stop()
 			elif(!wait):
 				$AnimatedSprite.animation="carry"
 		elif(velocity.length()==0):
@@ -83,7 +87,7 @@ func _process(delta):
 			$AnimatedSprite.frame=26
 		if($AnimatedSprite.animation=="wait_item"):
 			$AnimatedSprite.animation="wait"
-			$AnimatedSprite.frame=23
+			timer_start(10)
 		if($AnimatedSprite.animation=="carry"):
 			$AnimatedSprite.animation="walk"
 			$AnimatedSprite.frame=26
@@ -97,6 +101,7 @@ func _process(delta):
 				timer_start(1.4)
 			elif($AnimatedSprite.animation=="wait"):
 				$AnimatedSprite.animation="walk"
+				timer_stop()
 			elif(!wait):
 				$AnimatedSprite.animation="walk"
 		elif(velocity.length()==0):
