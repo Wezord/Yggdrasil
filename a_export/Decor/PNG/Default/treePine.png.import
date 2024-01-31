@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/blackSmoke22.png-7fced0287ef51703d5d45963d26559fc.stex"
+path="res://.import/treePine.png-c35a1b5adbc5f29bff569f0b1def26af.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Decor/Black_smoke/blackSmoke22.png"
-dest_files=[ "res://.import/blackSmoke22.png-7fced0287ef51703d5d45963d26559fc.stex" ]
+source_file="res://Decor/PNG/Default/treePine.png"
+dest_files=[ "res://.import/treePine.png-c35a1b5adbc5f29bff569f0b1def26af.stex" ]
 
 [params]
 

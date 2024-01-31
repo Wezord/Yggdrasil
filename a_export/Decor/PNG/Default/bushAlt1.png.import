@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/blackSmoke22.png-7fced0287ef51703d5d45963d26559fc.stex"
+path="res://.import/bushAlt1.png-7d2b8ebe7d41697992409e1c80f1bfb4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Decor/Black_smoke/blackSmoke22.png"
-dest_files=[ "res://.import/blackSmoke22.png-7fced0287ef51703d5d45963d26559fc.stex" ]
+source_file="res://Decor/PNG/Default/bushAlt1.png"
+dest_files=[ "res://.import/bushAlt1.png-7d2b8ebe7d41697992409e1c80f1bfb4.stex" ]
 
 [params]
 
