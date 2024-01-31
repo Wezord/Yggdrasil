@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=2]
+[gd_scene load_steps=72 format=2]
 
 [ext_resource path="res://Tuff_golem_walk_pixel_art-ezgif.com-gif-to-sprite-converter.png" type="Texture" id=1]
 [ext_resource path="res://script/scriptGolem.gd" type="Script" id=2]
@@ -319,32 +319,79 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=55]
 extents = Vector2( 58.75, 51 )
 
+[sub_resource type="AtlasTexture" id=68]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 256, 135 )
+
+[sub_resource type="AtlasTexture" id=69]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 256, 0, 256, 135 )
+
+[sub_resource type="AtlasTexture" id=70]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 512, 0, 256, 135 )
+
+[sub_resource type="AtlasTexture" id=71]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 768, 0, 256, 135 )
+
+[sub_resource type="AtlasTexture" id=72]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 1024, 0, 256, 135 )
+
+[sub_resource type="SpriteFrames" id=67]
+animations = [ {
+"frames": [ SubResource( 68 ), SubResource( 69 ), SubResource( 70 ), SubResource( 71 ), SubResource( 72 ), null ],
+"loop": false,
+"name": "Slash",
+"speed": 16.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
 [node name="KinematicBody2D" type="KinematicBody2D" groups=["Player"]]
+position = Vector2( 1, 1 )
+collision_layer = 5
+collision_mask = 2
 input_pickable = true
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 555, 316 )
+position = Vector2( -1, 1 )
 shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 557, 314 )
 scale = Vector2( 0.284916, 0.341727 )
 frames = SubResource( 29 )
-animation = "Slash"
-frame = 5
+animation = "Mine"
+frame = 12
 playing = true
 
 [node name="StoneAttack" type="Area2D" parent="."]
-position = Vector2( 1, -1 )
+position = Vector2( 1, 1 )
+collision_layer = 5
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StoneAttack"]
-position = Vector2( 437, 318 )
+position = Vector2( -115, 1 )
 shape = SubResource( 55 )
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
+position = Vector2( -49, -15 )
+scale = Vector2( 1.01562, 1.65867 )
+frames = SubResource( 67 )
+playing = true
 
 [connection signal="mouse_entered" from="." to="." method="_on_KinematicBody2D_mouse_entered"]
 [connection signal="body_entered" from="StoneAttack" to="." method="_on_StoneAttack_body_entered"]

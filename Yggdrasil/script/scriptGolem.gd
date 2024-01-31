@@ -4,12 +4,7 @@ extends KinematicBody2D
 # var a = 2
 # var b = "text"
 var body_in_area : Array = []
-
-
-
-export (int) var stones = 0
-export (int) var logs = 0
-export (int) var waters = 0
+var items_in_inventory : Array = []
 
 export (int) var health = 50
 export (int) var attack_cooldown = 3
@@ -17,6 +12,8 @@ export (int) var attack_cooldown = 3
 var ind : int = 0 
 var can_attack : bool = true
 var timer : Timer
+
+signal position_changed(position)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -40,13 +37,15 @@ func _process(delta):
 		
 	if Input.is_action_pressed("ui_select") and can_attack:
 		print("Attack")
+		$AnimatedSprite2.animation ="Slash"
 		can_attack = false
-		timer.wait_time = 1
+		timer.wait_time = 2
 		timer.start()
-		$AnimatedSprite.animation ="Slash"
 		for i in body_in_area:
 			print(i)
 			i.attack()
+			
+	emit_signal("position_changed", global_position)
 			
 func _on_KinematicBody2D_mouse_entered():
 	print("Mouse entered")
@@ -59,7 +58,9 @@ func _on_StoneAttack_input_event(viewport, event, shape_idx):
 
 func _on_StoneAttack_body_entered(body):
 	if body.is_in_group("Enemy"):
+		print("1")
 		if not body_in_area.has(body):
+			print("2")
 			body_in_area.append(body)
 		
 		print("Enemy")
@@ -73,4 +74,9 @@ func _on_StoneAttack_body_exited(body):
 func _on_Timer_timeout():
 	print("time_out")
 	can_attack = true
-	$AnimatedSprite.animation = "Mine"
+	$AnimatedSprite2.animation = "default"
+
+func hasItem():
+	if items_in_inventory != []:
+		return true
+	return false

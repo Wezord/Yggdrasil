@@ -15,8 +15,10 @@ position = Vector2( 889, -1 )
 position = Vector2( 885, 409 )
 
 [node name="ArbreMonde" parent="." instance=ExtResource( 4 )]
+position = Vector2( 520, 303 )
 
 [node name="Golem" parent="." instance=ExtResource( 1 )]
-position = Vector2( -106, 132 )
+position = Vector2( 275, 460 )
 
-[node name="KinematicBody2D" parent="." instance=ExtResource( 5 )]
+[node name="Draven" parent="." instance=ExtResource( 5 )]
+position = Vector2( 798, 114 )
