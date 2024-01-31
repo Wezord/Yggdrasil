@@ -1,5 +1,4 @@
-extends Node2D
-
+extends KinematicBody2D
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -25,21 +24,5 @@ func _process(delta):
 	if Input.is_action_pressed("ui_down") :
 		velocity.y += 1
 	if velocity.length() > 0:
-		velocity = velocity.normalized()
-		position += velocity * delta * 300
-		
-func _on_Area2D_area_entered(area):
-	print("zone")
-	if area.is_in_group("Items"):
-		print("true")
-		if area.is_in_group("Stones"):
-			stones+=1
-			print("Stones !", stones)
-		elif area.is_in_group("Logs"):
-			logs+=1
-			print("Logs !", logs)
-		elif area.is_in_group("Waters"):
-			print("Waters !", waters)
-			waters+=1
-		area.pickup()
-
+		velocity = velocity.normalized() * 300
+		velocity = move_and_slide(velocity)

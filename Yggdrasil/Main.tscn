@@ -7,13 +7,13 @@
 
 [node name="Main" type="Node2D" groups=["Logs", "Stones", "Waters"]]
 
-[node name="ArbreMonde" parent="." instance=ExtResource( 4 )]
-
-[node name="Golem" parent="." instance=ExtResource( 1 )]
-position = Vector2( -187, 149 )
-
 [node name="Pierre" parent="." instance=ExtResource( 2 )]
 position = Vector2( 889, -1 )
 
 [node name="Log" parent="." instance=ExtResource( 3 )]
 position = Vector2( 885, 409 )
+
+[node name="ArbreMonde" parent="." instance=ExtResource( 4 )]
+
+[node name="Golem" parent="." instance=ExtResource( 1 )]
+position = Vector2( -106, 132 )

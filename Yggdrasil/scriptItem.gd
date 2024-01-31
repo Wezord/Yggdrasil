@@ -1,4 +1,4 @@
-extends StaticBody2D
+extends Node2D
 
 
 # Declare member variables here. Examples:
@@ -15,6 +15,6 @@ func _ready():
 #func _process(delta):
 #	pass
 
-
-func _on_ArbreMonde_mouse_entered():
-	print("Souris dedans !")
+func _on_Area2D_area_entered(area):
+	if area.is_in_group("Items"):
+		
