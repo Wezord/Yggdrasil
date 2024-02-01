@@ -14,6 +14,7 @@ func _ready():
 	player = get_node("../Player/Player")
 	$Health.hide()
 	$healthbar.hide()
+	$Ressources.hide()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -30,10 +31,12 @@ func _process(delta):
 		$AnimatedSprite.animation="hide"
 		$Health.show()
 		$healthbar.show()
+		$Ressources.show()
 	elif(player.health<=0):
 		$AnimatedSprite.animation="game_over"
 		$Health.hide()
 		$healthbar.hide()
+		$Ressources.hide()
 
 	$healthbar.update_health(player.health)
 
