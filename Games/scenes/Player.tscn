@@ -1005,8 +1005,8 @@ shape = SubResource( 664 )
 position = Vector2( 0.000244141, -38.6636 )
 scale = Vector2( 0.312416, 0.328244 )
 frames = SubResource( 665 )
-animation = "wait_item"
-frame = 3
+animation = "wait"
+frame = 22
 playing = true
 
 [node name="wakeup_time" type="Timer" parent="Player"]

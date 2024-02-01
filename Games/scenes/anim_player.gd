@@ -4,6 +4,8 @@ var velocity
 var carry_item
 var my_timer
 var wait
+var health=300
+var item_carry="red"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -25,6 +27,11 @@ func timer_stop():
 
 func _on_Timer_timeout():
 	wait=false
+
+
+func get_velocity():
+	return velocity.length()
+
 
 
 func _process(delta):
@@ -114,10 +121,13 @@ func _process(delta):
 		if(!wait || $AnimatedSprite.animation=="wait" || $AnimatedSprite.animation=="walk"):
 			move_and_collide(velocity*200*delta)
 		
-	$AnimatedSprite.z_index=floor(position.y)
-	$AnimatedSprite2.z_index=floor(position.y-1)
-	$Sprite.z_index=floor(position.y-1)
+		
+		
+		if(Input.is_action_just_pressed("ui_end")):
+			health-=50
+	#$AnimatedSprite.z_index=floor(position.y)
+	#$AnimatedSprite2.z_index=floor(position.y-1)
+	#$Sprite.z_index=floor(position.y-1)
 	
-	print(position.y)
 	
 	

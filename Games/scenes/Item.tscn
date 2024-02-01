@@ -365,6 +365,6 @@ animations = [ {
 [node name="Item" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.212508, 0.212508 )
 frames = SubResource( 663 )
-animation = "purple"
-frame = 8
+animation = "water"
+frame = 1
 playing = true

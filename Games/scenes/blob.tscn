@@ -138,7 +138,7 @@ animations = [ {
 "speed": 8.0
 }, {
 "frames": [ SubResource( 574 ), SubResource( 575 ), SubResource( 576 ), SubResource( 577 ), SubResource( 578 ), SubResource( 579 ), SubResource( 580 ), SubResource( 581 ) ],
-"loop": false,
+"loop": true,
 "name": "jump",
 "speed": 8.0
 } ]
@@ -163,5 +163,5 @@ position = Vector2( -1.297, -36.9622 )
 scale = Vector2( 2.65068, 2.65069 )
 frames = SubResource( 592 )
 animation = "chill"
-frame = 3
+frame = 2
 playing = true

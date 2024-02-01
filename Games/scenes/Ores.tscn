@@ -354,7 +354,8 @@ shape = SubResource( 2 )
 
 [node name="AnimatedSpriteOre" type="AnimatedSprite" parent="ores"]
 position = Vector2( 19, -124 )
+scale = Vector2( 1, 1.01179 )
 frames = SubResource( 1 )
-animation = "red"
-frame = 11
+animation = "purple"
+frame = 7
 playing = true

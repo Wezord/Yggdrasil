@@ -1,20 +1,28 @@
 extends KinematicBody2D
 
 var action
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
+var velocity
+var health
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	velocity = Vector2(0, 0)
+	health = 300
 
 
 
 func _process(delta):
-	$AnimatedSprite.z_index=floor(position.y)
-	$Sprite.z_index=floor(position.y-1)
+	#$AnimatedSprite.z_index=floor(position.y)
+	#$Sprite.z_index=floor(position.y-1)
+	
+	
+	if(health<=0):
+		action="die"
+	elif(velocity.length()>0):
+		action="jump"
+	else:
+		action="chill"
+	
 	
 	if(action=="chill"):
 		$AnimatedSprite.animation="chill"

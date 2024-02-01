@@ -1,17 +1,16 @@
 extends KinematicBody2D
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
+var anim
+var cont
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	anim=["blue", "gold", "purple", "red"]
+	cont=0
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	$AnimatedSpriteOre.z_index=floor(position.y)
-	print(position.y)
+	if(Input.is_action_just_pressed("ui_page_up")):
+		cont+=1
+		cont=cont%4
+	$AnimatedSpriteOre.animation=anim[cont]
