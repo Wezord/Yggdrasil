@@ -47,7 +47,7 @@ func _process(delta):
 		timer.start()
 		for i in body_in_area:
 			print(i)
-			i.attack()
+			i.attack(10)
 			
 	emit_signal("position_changed", global_position)
 			
@@ -89,6 +89,7 @@ func hasItem():
 func _on_HitBox_body_entered(body):
 	if body.is_in_group("Enemy"):
 		print("Drop")
+		body._attack()
 		for i in items_in_inventory:
 			print(i)
 			disconnect("position_changed", i, "_on_position_changed")
