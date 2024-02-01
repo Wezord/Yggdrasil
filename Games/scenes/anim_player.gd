@@ -26,6 +26,7 @@ func timer_stop():
 func _on_Timer_timeout():
 	wait=false
 
+
 func _process(delta):
 	velocity=Vector2(0,0)
 	if(Input.is_action_pressed("ui_right")):
@@ -39,6 +40,7 @@ func _process(delta):
 
 
 	$AnimatedSprite.flip_h=(velocity.x>0) || ($AnimatedSprite.flip_h && (velocity.x==0))
+	$AnimatedSprite2.flip_h=$AnimatedSprite.flip_h
 	velocity=velocity.normalized()
 	
 	if(Input.is_action_just_pressed("ui_page_down")):
@@ -78,7 +80,7 @@ func _process(delta):
 				$AnimatedSprite.animation="idle_item"
 		
 		if(!wait || ($AnimatedSprite.animation=="wait_item" || $AnimatedSprite.animation=="carry")):
-			position+=velocity*200*delta
+			move_and_collide(velocity*200*delta)
 	else:
 		if($AnimatedSprite.animation=="idle_item"):
 			$AnimatedSprite.animation="idle"
@@ -110,8 +112,12 @@ func _process(delta):
 				$AnimatedSprite.animation="idle"
 		
 		if(!wait || $AnimatedSprite.animation=="wait" || $AnimatedSprite.animation=="walk"):
-			position+=velocity*200*delta
+			move_and_collide(velocity*200*delta)
+		
+	$AnimatedSprite.z_index=floor(position.y)
+	$AnimatedSprite2.z_index=floor(position.y-1)
+	$Sprite.z_index=floor(position.y-1)
 	
-	
+	print(position.y)
 	
 	
