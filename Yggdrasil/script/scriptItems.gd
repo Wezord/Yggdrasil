@@ -31,6 +31,7 @@ func _on_Area2D_body_entered(body):
 				print("Déjà un item !")
 			else:
 				body.items_in_inventory.append(self)
+				print("Récupère")
 				source_object.connect("position_changed", self, "_on_position_changed")
 				
 				

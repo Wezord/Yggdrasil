@@ -35,5 +35,6 @@ func _on_Area2D_body_entered(body):
 		
 		#Si assez de ressources on améliore l'arbre
 		if ressources["Pierre"] == stones_necessaire and ressources["Log"] == logs_necessaire:
-			level +=1 
+			level +=1
+			$AnimatedSprite.animation = "Level"+ str(level)
 			print("Amelioration")

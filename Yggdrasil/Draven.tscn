@@ -29,7 +29,7 @@ animations = [ {
 "speed": 12.0
 } ]
 
-[node name="Draven" type="KinematicBody2D" groups=["Enemy"]]
+[node name="Rengar" type="KinematicBody2D" groups=["Enemy"]]
 collision_layer = 4
 input_pickable = true
 script = ExtResource( 2 )
@@ -40,5 +40,4 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.523851, 0.508956 )
 frames = SubResource( 2 )
-frame = 1
 playing = true

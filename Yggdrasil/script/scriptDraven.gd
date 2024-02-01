@@ -27,6 +27,6 @@ func _process(delta):
 	if player:
 		var delta_x = player.position.x - position.x
 		var delta_y = player.position.y - position.y
-		var velocity = Vector2(delta_x, delta_y).normalized() * delta * 200
+		var velocity = Vector2(delta_x, delta_y).normalized() * delta * 100
 		velocity = move_and_collide(velocity)
 	

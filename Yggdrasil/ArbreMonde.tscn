@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Arbre (2).png" type="Texture" id=1]
 [ext_resource path="res://script/scriptArbreMonde.gd" type="Script" id=2]
+[ext_resource path="res://arbre2(1).png" type="Texture" id=3]
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 152.738
@@ -10,7 +11,12 @@ radius = 152.738
 animations = [ {
 "frames": [ ExtResource( 1 ) ],
 "loop": true,
-"name": "default",
+"name": "Level1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "Level2",
 "speed": 5.0
 } ]
 
@@ -28,6 +34,7 @@ shape = SubResource( 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.368275, 0.428287 )
 frames = SubResource( 3 )
+animation = "Level1"
 
 [node name="Area2D" type="Area2D" parent="."]
 

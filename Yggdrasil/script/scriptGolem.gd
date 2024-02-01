@@ -25,12 +25,16 @@ func _process(delta):
 	var velocity = Vector2()
 	if Input.is_action_pressed("ui_right") :
 		velocity.x += 1
+		$StoneAttack.rotation_degrees = 180
 	if Input.is_action_pressed("ui_left") :
 		velocity.x -= 1
+		$StoneAttack.rotation_degrees = 0
 	if Input.is_action_pressed("ui_up") :
+		$StoneAttack.rotation_degrees = 90
 		velocity.y -= 1
 	if Input.is_action_pressed("ui_down") :
 		velocity.y += 1
+		$StoneAttack.rotation_degrees = 270
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * 300
 		velocity = move_and_slide(velocity)
@@ -55,7 +59,7 @@ func _on_StoneAttack_input_event(viewport, event, shape_idx):
 		print("Select")
 		
 
-
+# Ajoute l'enemy à la liste d'ennemis dans 
 func _on_StoneAttack_body_entered(body):
 	if body.is_in_group("Enemy"):
 		print("1")
@@ -80,3 +84,12 @@ func hasItem():
 	if items_in_inventory != []:
 		return true
 	return false
+
+# Si un enemy arrive et touche le joueur
+func _on_HitBox_body_entered(body):
+	if body.is_in_group("Enemy"):
+		print("Drop")
+		for i in items_in_inventory:
+			print(i)
+			disconnect("position_changed", i, "_on_position_changed")
+		items_in_inventory.clear()
