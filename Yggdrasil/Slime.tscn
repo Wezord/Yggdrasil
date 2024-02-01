@@ -135,20 +135,28 @@ animations = [ {
 "speed": 8.0
 }, {
 "frames": [ SubResource( 574 ), SubResource( 575 ), SubResource( 576 ), SubResource( 577 ), SubResource( 578 ), SubResource( 579 ), SubResource( 580 ), SubResource( 581 ) ],
-"loop": false,
+"loop": true,
 "name": "jump",
 "speed": 8.0
 } ]
 
 [node name="Slime" instance=ExtResource( 1 )]
+position = Vector2( 467, 260 )
 script = ExtResource( 5 )
 
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2( -1, 4 )
+
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="1"]
-position = Vector2( 483, 195 )
-scale = Vector2( 2.65068, 2.65069 )
+position = Vector2( 1.99999, 1.52588e-05 )
+scale = Vector2( 0.888977, 1.10913 )
 frames = SubResource( 591 )
-animation = "jump"
-frame = 7
+animation = "chill"
+frame = 1
 playing = true
 
 [node name="Timer" type="Timer" parent="." index="2"]
+wait_time = 8.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
