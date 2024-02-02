@@ -10,7 +10,7 @@ config_version=4
 
 [application]
 
-config/name="Coin dash"
+config/name="Yggdrasil"
 run/main_scene="res://scenes/Yggdrasil.tscn"
 config/icon="res://icon.png"
 
