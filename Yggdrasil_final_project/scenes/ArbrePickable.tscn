@@ -1,0 +1,372 @@
+[gd_scene load_steps=72 format=2]
+
+[ext_resource path="res://ressources/Items/gold_ore.png" type="Texture" id=1]
+[ext_resource path="res://script/ArbrePickable.gd" type="Script" id=2]
+[ext_resource path="res://GreenItem.tscn" type="PackedScene" id=3]
+[ext_resource path="res://ressources/Items/red_ore.png" type="Texture" id=4]
+[ext_resource path="res://ressources/Items/blue_ore.png" type="Texture" id=5]
+[ext_resource path="res://ressources/Items/purple_ore.png" type="Texture" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 235, 86.25 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 280, 175 )
+
+[sub_resource type="AtlasTexture" id=75]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 266, 360 )
+
+[sub_resource type="AtlasTexture" id=76]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 266, 0, 266, 360 )
+
+[sub_resource type="AtlasTexture" id=77]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 532, 0, 266, 360 )
+
+[sub_resource type="AtlasTexture" id=78]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 798, 0, 266, 360 )
+
+[sub_resource type="AtlasTexture" id=79]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 1064, 0, 266, 360 )
+
+[sub_resource type="AtlasTexture" id=80]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 0, 360, 266, 360 )
+
+[sub_resource type="AtlasTexture" id=43]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 480, 480 )
+
+[sub_resource type="AtlasTexture" id=44]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 480, 0, 480, 480 )
+
+[sub_resource type="AtlasTexture" id=45]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 960, 0, 480, 480 )
+
+[sub_resource type="AtlasTexture" id=46]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 1440, 0, 480, 480 )
+
+[sub_resource type="AtlasTexture" id=47]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 1920, 0, 480, 480 )
+
+[sub_resource type="AtlasTexture" id=48]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 480, 480, 480 )
+
+[sub_resource type="AtlasTexture" id=49]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 480, 480, 480, 480 )
+
+[sub_resource type="AtlasTexture" id=50]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 960, 480, 480, 480 )
+
+[sub_resource type="AtlasTexture" id=51]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 1440, 480, 480, 480 )
+
+[sub_resource type="AtlasTexture" id=52]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 1920, 480, 480, 480 )
+
+[sub_resource type="AtlasTexture" id=53]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 960, 480, 480 )
+
+[sub_resource type="AtlasTexture" id=54]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 480, 960, 480, 480 )
+
+[sub_resource type="AtlasTexture" id=55]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 960, 960, 480, 480 )
+
+[sub_resource type="AtlasTexture" id=56]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 1440, 960, 480, 480 )
+
+[sub_resource type="AtlasTexture" id=57]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 1920, 960, 480, 480 )
+
+[sub_resource type="AtlasTexture" id=58]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 1440, 480, 480 )
+
+[sub_resource type="AtlasTexture" id=59]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 484, 484 )
+
+[sub_resource type="AtlasTexture" id=60]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 484, 0, 484, 484 )
+
+[sub_resource type="AtlasTexture" id=61]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 968, 0, 484, 484 )
+
+[sub_resource type="AtlasTexture" id=62]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 1452, 0, 484, 484 )
+
+[sub_resource type="AtlasTexture" id=63]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 1936, 0, 484, 484 )
+
+[sub_resource type="AtlasTexture" id=64]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 0, 484, 484, 484 )
+
+[sub_resource type="AtlasTexture" id=65]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 484, 484, 484, 484 )
+
+[sub_resource type="AtlasTexture" id=66]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 968, 484, 484, 484 )
+
+[sub_resource type="AtlasTexture" id=67]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 1452, 484, 484, 484 )
+
+[sub_resource type="AtlasTexture" id=68]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 1936, 484, 484, 484 )
+
+[sub_resource type="AtlasTexture" id=69]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 0, 968, 484, 484 )
+
+[sub_resource type="AtlasTexture" id=70]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 484, 968, 484, 484 )
+
+[sub_resource type="AtlasTexture" id=71]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 968, 968, 484, 484 )
+
+[sub_resource type="AtlasTexture" id=72]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 1452, 968, 484, 484 )
+
+[sub_resource type="AtlasTexture" id=73]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 1936, 968, 484, 484 )
+
+[sub_resource type="AtlasTexture" id=74]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 0, 1452, 484, 484 )
+
+[sub_resource type="AtlasTexture" id=81]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 409, 424 )
+
+[sub_resource type="AtlasTexture" id=82]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 409, 0, 409, 424 )
+
+[sub_resource type="AtlasTexture" id=83]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 818, 0, 409, 424 )
+
+[sub_resource type="AtlasTexture" id=84]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 1227, 0, 409, 424 )
+
+[sub_resource type="AtlasTexture" id=85]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 1636, 0, 409, 424 )
+
+[sub_resource type="AtlasTexture" id=86]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 0, 424, 409, 424 )
+
+[sub_resource type="AtlasTexture" id=87]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 409, 424, 409, 424 )
+
+[sub_resource type="AtlasTexture" id=88]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 818, 424, 409, 424 )
+
+[sub_resource type="AtlasTexture" id=89]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 1227, 424, 409, 424 )
+
+[sub_resource type="AtlasTexture" id=90]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 1636, 424, 409, 424 )
+
+[sub_resource type="AtlasTexture" id=91]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 0, 848, 409, 424 )
+
+[sub_resource type="AtlasTexture" id=92]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 409, 848, 409, 424 )
+
+[sub_resource type="AtlasTexture" id=93]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 818, 848, 409, 424 )
+
+[sub_resource type="AtlasTexture" id=94]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 1227, 848, 409, 424 )
+
+[sub_resource type="AtlasTexture" id=95]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 1636, 848, 409, 424 )
+
+[sub_resource type="AtlasTexture" id=96]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 0, 1272, 409, 424 )
+
+[sub_resource type="AtlasTexture" id=97]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 409, 1272, 409, 424 )
+
+[sub_resource type="AtlasTexture" id=98]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 818, 1272, 409, 424 )
+
+[sub_resource type="AtlasTexture" id=99]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 1227, 1272, 409, 424 )
+
+[sub_resource type="AtlasTexture" id=100]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 1636, 1272, 409, 424 )
+
+[sub_resource type="AtlasTexture" id=101]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 0, 1696, 409, 424 )
+
+[sub_resource type="AtlasTexture" id=102]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 409, 1696, 409, 424 )
+
+[sub_resource type="AtlasTexture" id=103]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 818, 1696, 409, 424 )
+
+[sub_resource type="AtlasTexture" id=104]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 1227, 1696, 409, 424 )
+
+[sub_resource type="SpriteFrames" id=105]
+animations = [ {
+"frames": [ SubResource( 75 ), SubResource( 76 ), SubResource( 77 ), SubResource( 78 ), SubResource( 79 ), SubResource( 80 ) ],
+"loop": true,
+"name": "blue",
+"speed": 8.0
+}, {
+"frames": [ SubResource( 43 ), SubResource( 44 ), SubResource( 45 ), SubResource( 46 ), SubResource( 47 ), SubResource( 48 ), SubResource( 49 ), SubResource( 50 ), SubResource( 51 ), SubResource( 52 ), SubResource( 53 ), SubResource( 54 ), SubResource( 55 ), SubResource( 56 ), SubResource( 57 ), SubResource( 58 ) ],
+"loop": true,
+"name": "gold",
+"speed": 16.0
+}, {
+"frames": [ SubResource( 59 ), SubResource( 60 ), SubResource( 61 ), SubResource( 62 ), SubResource( 63 ), SubResource( 64 ), SubResource( 65 ), SubResource( 66 ), SubResource( 67 ), SubResource( 68 ), SubResource( 69 ), SubResource( 70 ), SubResource( 71 ), SubResource( 72 ), SubResource( 73 ), SubResource( 74 ) ],
+"loop": true,
+"name": "purple",
+"speed": 16.0
+}, {
+"frames": [ SubResource( 81 ), SubResource( 82 ), SubResource( 83 ), SubResource( 84 ), SubResource( 85 ), SubResource( 86 ), SubResource( 87 ), SubResource( 88 ), SubResource( 89 ), SubResource( 90 ), SubResource( 91 ), SubResource( 92 ), SubResource( 93 ), SubResource( 94 ), SubResource( 95 ), SubResource( 96 ), SubResource( 97 ), SubResource( 98 ), SubResource( 99 ), SubResource( 100 ), SubResource( 101 ), SubResource( 102 ), SubResource( 103 ), SubResource( 104 ) ],
+"loop": true,
+"name": "red",
+"speed": 8.0
+} ]
+
+[node name="ArbrePickable" type="StaticBody2D" groups=["Pickable"]]
+scale = Vector2( 0.07, 0.07 )
+script = ExtResource( 2 )
+worldTopLeft = Vector2( -1500, -700 )
+worldBottomRight = Vector2( 1500, 1500 )
+Item = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 25, 36.25 )
+shape = SubResource( 1 )
+
+[node name="Collision" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision"]
+position = Vector2( 30, -65 )
+shape = SubResource( 2 )
+
+[node name="AnimatedSpriteOre" type="AnimatedSprite" parent="."]
+position = Vector2( 19, -124 )
+frames = SubResource( 105 )
+animation = "red"
+playing = true
+
+[connection signal="body_entered" from="Collision" to="." method="_on_Collision_body_entered"]
